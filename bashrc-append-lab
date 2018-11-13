@@ -1,0 +1,4 @@
+# Appended bashrc for lab at up-X.ms.mff.cuni.cz
+
+alias sshsolaris="ssh drozdikt@u-ss.ms.mff.cuni.cz"
+
