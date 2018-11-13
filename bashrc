@@ -106,10 +106,18 @@ function git_dirty {
 }
 
 # Variables
-ps1_user="$BIRed\u$NONE"
-ps1_host="$BIYellow\h$NONE"
-ps1_dir="$BIPurple\w$NONE"
-ps1_git="$Cyan \$(parse_git_branch)$Red \$(git_dirty)$NONE"
+ps1_user="$IRed\u$NONE"
+ps1_host="$ICyan\h$NONE"
+ps1_dir="$Cyan\W$NONE"
+ps1_git="$ICyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
+ps1_exitval="$ICyan\$?$NONE"
+ps1_lb="$Green[$NONE"
+ps1_rb="$Green]$NONE"
+ps1_at="$Green@$NONE"
+ps1_colon="$Green:$NONE"
+ps1_gt="$IRed>$NONE"
+
+
 
 # Option 1 user@host:dir(branch)! $
 # export PS1="${ps1_user}@${ps1_host}:${ps1_dir}${ps1_git} \$ "
@@ -117,7 +125,7 @@ ps1_git="$Cyan \$(parse_git_branch)$Red \$(git_dirty)$NONE"
 # Option 2 dir(branch)! $
 #export PS1="${ps1_user}${BIPurple}@${ps1_host}${BIPurple}:${ps1_dir}${BIPurple} \$ ${NONE}"
 
-export PS1="\n$BIGreen:\$?  \w$NONE\n$BIRed>$NONE \[$(tput sgr0)\]"
+export PS1="\n${ps1_exitval} ${ps1_lb}${ps1_user}${ps1_at}${ps1_host}${ps1_colon} ${ps1_dir}${ps1_rb}${ps1_git}\n${ps1_gt} "
 
 
 # ------------------------------------
