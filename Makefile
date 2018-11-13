@@ -22,5 +22,5 @@ backup:
 
 .PHONY: reset
 reset:
-	tmux kill-server 
+	-tmux kill-server 
 	bash
