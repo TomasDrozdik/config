@@ -1,5 +1,5 @@
 
-all: backup load
+all: backup load reset
 
 .PHONY: load
 load:
