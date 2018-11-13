@@ -1,10 +1,13 @@
 
-all: backup
-	mv .bashrc ~
-	mv .vimrc ~
-	mv .tmux.conf ~
+all: backup 
+	cp bashrc ~/.bashrc
+	cp vimrc ~/.vimrc
+	cp tmux.conf ~/.tmux.conf
 
+.PHONY: backup
 backup:
-	mv ~/.bashrc backup
-	mv ~/.vimrc backup
-	mv ~/.tmux.conf backup
+	rm -Rf backup
+	mkdir backup
+	cp ~/.bashrc backup
+	cp ~/.vimrc backup
+	cp ~/.tmux.conf backup
