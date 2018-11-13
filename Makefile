@@ -1,8 +1,10 @@
 
-.PHONY: all
 all: backup load reset
 
-lab: all
+lab: lab1 reset
+
+.PHONY: lab1
+lab1: backup load
 	cp bashrc-append-lab ~/.bashrc-append
 
 .PHONY: load
