@@ -12,6 +12,7 @@ load:
 	cp bashrc ~/.bashrc
 	cp vimrc ~/.vimrc
 	cp tmux.conf ~/.tmux.conf
+	cp bash_profile ~/.bash_profile
 
 .PHONY: backup
 backup:
@@ -19,8 +20,9 @@ backup:
 	-cp ~/.bashrc backup
 	-cp ~/.vimrc backup
 	-cp ~/.tmux.conf backup
+	-cp ~/.bash_profile
 
 .PHONY: reset
 reset:
 	-tmux kill-server 
-	bash
+	source ~/.bashrc

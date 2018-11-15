@@ -140,8 +140,6 @@ if [ -f ~/.bashrc-append ]; then
 fi
 
 
-
-
 # ------------------------------------
 # MOTD (Message of the Day)
 # What you see when Terminal opens
