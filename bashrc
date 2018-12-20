@@ -31,10 +31,7 @@ alias grep="grep --color=auto"
 alias rm="rm -i"
 alias mv="mv -i"
 alias man="man -a"
-
-# Example alias for SSH'ing into a server
-#alias myserver="ssh user@111.111.111.111"
-alias sshlab="ssh drozdikt@u-pl8.ms.mff.cuni.cz"
+alias docview="evince"
 
 # Example alias for quickly getting to a commonly used directory
 #alias htdocs='cd /Applications/MAMP/htdocs'
@@ -108,7 +105,7 @@ function git_dirty {
 # Variables
 ps1_user="$IRed\u$NONE"
 ps1_host="$ICyan\h$NONE"
-ps1_dir="$Cyan\W$NONE"
+ps1_dir="$Cyan\w$NONE"
 ps1_git="$ICyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
 ps1_exitval="$ICyan\$?$NONE"
 ps1_lb="$Green[$NONE"
