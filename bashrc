@@ -103,16 +103,16 @@ function git_dirty {
 }
 
 # Variables
-ps1_user="$IRed\u$NONE"
-ps1_host="$ICyan\h$NONE"
-ps1_dir="$Cyan\w$NONE"
-ps1_git="$ICyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
-ps1_exitval="$ICyan\$?$NONE"
-ps1_lb="$Green[$NONE"
-ps1_rb="$Green]$NONE"
-ps1_at="$Green@$NONE"
-ps1_colon="$Green:$NONE"
-ps1_gt="$IRed>$NONE"
+ps1_user="$BIRed\u$NONE"
+ps1_host="$BICyan\h$NONE"
+ps1_dir="$BCyan\w$NONE"
+ps1_git="$BICyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
+ps1_exitval="$BICyan\$?$NONE"
+ps1_lb="$BGreen[$NONE"
+ps1_rb="$BGreen]$NONE"
+ps1_at="$BGreen@$NONE"
+ps1_colon="$BGreen:$NONE"
+ps1_gt="$BIRed>$NONE"
 
 
 

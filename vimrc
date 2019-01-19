@@ -1,6 +1,31 @@
 "" .vimrc
 
 "*****************************************************************************
+"" Plugins
+"*****************************************************************************"
+call plug#begin('~/.vim/plugged')
+
+" Color scheme and airline themes
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+"*****************************************************************************
+"" Plugin setup
+"*****************************************************************************"
+
+"" Gruvbox
+set termguicolors
+let g:gruvbox_italic=1
+let g:gruvbox_bold=1
+let g:gruvbox_underline=1
+let g:gruvbox_undercurl=1
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+colorscheme gruvbox
+
+
+"*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
 "" Encoding
@@ -13,6 +38,11 @@ set ttyfast
 
 "" Indentation
 set smartindent
+set cindent
+
+"" Line numbers
+set number
+set relativenumber
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -44,6 +74,10 @@ set noswapfile
 syntax on
 set ruler
 set number
+
+" Vertical rulers 80, 120
+set textwidth=80
+set colorcolumn=+1
 
 set background=dark
 
@@ -193,4 +227,5 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType cc setlocal tabstop=4 shiftwidth=4 expandtab
 

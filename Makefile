@@ -28,4 +28,3 @@ backup:
 reset:
 	-tmux kill-server 
 	source ~/.bashrc
-	bash
