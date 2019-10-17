@@ -1,5 +1,12 @@
+# ------------------------------------
+# STARTUP
+# ------------------------------------
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+# Start in tmux
+if [[ -z "$TMUX" ]]; then
+	tmux
+fi
 
 # ------------------------------------
 # Environment variables
@@ -103,17 +110,16 @@ function git_dirty {
 }
 
 # Variables
-ps1_user="$BIRed\u$NONE"
-ps1_host="$BICyan\h$NONE"
-ps1_dir="$BCyan\w$NONE"
-ps1_git="$BICyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
-ps1_exitval="$BICyan\$?$NONE"
-ps1_lb="$BGreen[$NONE"
-ps1_rb="$BGreen]$NONE"
-ps1_at="$BGreen@$NONE"
-ps1_colon="$BGreen:$NONE"
-ps1_gt="$BIRed>$NONE"
-
+ps1_user="$Red\u$NONE"
+ps1_host="$Cyan\h$NONE"
+ps1_dir="$Yellow\w$NONE"
+ps1_git="$Cyan \$(parse_git_branch)$IRed \$(git_dirty)$NONE"
+ps1_exitval="$Cyan\$?$NONE"
+ps1_lb="$Green[$NONE"
+ps1_rb="$Green]$NONE"
+ps1_at="$Green@$NONE"
+ps1_colon="$Green:$NONE"
+ps1_gt="$Red>$NONE"
 
 
 # Option 1 user@host:dir(branch)! $

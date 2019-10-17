@@ -9,6 +9,7 @@ lab1: backup load
 
 .PHONY: load
 load:
+	cp zshrc ~/.zshrc
 	cp bashrc ~/.bashrc
 	cp vimrc ~/.vimrc
 	cp tmux.conf ~/.tmux.conf
@@ -18,6 +19,7 @@ load:
 .PHONY: backup
 backup:
 	-mkdir backup
+	-cp ~/.zshrc backup
 	-cp ~/.bashrc backup
 	-cp ~/.vimrc backup
 	-cp ~/.tmux.conf backup
@@ -28,3 +30,4 @@ backup:
 reset:
 	-tmux kill-server 
 	source ~/.bashrc
+	source ~/.zshrc
