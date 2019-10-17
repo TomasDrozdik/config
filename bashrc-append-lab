@@ -2,3 +2,7 @@
 
 alias sshsolaris="ssh drozdikt@u-ss.ms.mff.cuni.cz"
 
+if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+    exit
+fi
+

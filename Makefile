@@ -14,7 +14,6 @@ load:
 	cp vimrc ~/.vimrc
 	cp tmux.conf ~/.tmux.conf
 	cp bash_profile ~/.bash_profile
-	cp ssh_config ~/.ssh/config
 
 .PHONY: backup
 backup:
@@ -24,10 +23,10 @@ backup:
 	-cp ~/.vimrc backup
 	-cp ~/.tmux.conf backup
 	-cp ~/.bash_profile
-	-cp ~/.ssh/config
 
 .PHONY: reset
 reset:
 	-tmux kill-server 
 	source ~/.bashrc
 	source ~/.zshrc
+
