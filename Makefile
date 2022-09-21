@@ -1,7 +1,7 @@
 
-all: backup load reset
+all: backup load
 
-lab: lab1 reset
+lab: lab1 reset-bash
 
 .PHONY: lab1
 lab1: backup load
@@ -9,24 +9,27 @@ lab1: backup load
 
 .PHONY: load
 load:
-	cp zshrc ~/.zshrc
-	cp bashrc ~/.bashrc
-	cp vimrc ~/.vimrc
-	cp tmux.conf ~/.tmux.conf
-	cp bash_profile ~/.bash_profile
+	cp -i bashrc ~/.bashrc
+	cp -i vimrc ~/.vimrc
+	cp -i tmux.conf ~/.tmux.conf
+	cp -i profile ~/.profile
+	cp -i bash_profile ~/.bash_profile
 
 .PHONY: backup
 backup:
 	-mkdir backup
-	-cp ~/.zshrc backup
-	-cp ~/.bashrc backup
-	-cp ~/.vimrc backup
-	-cp ~/.tmux.conf backup
-	-cp ~/.bash_profile
+	-mv ~/.bashrc backup
+	-mv ~/.vimrc backup
+	-mv ~/.tmux.conf backup
+	-mv ~/.bash_profile backup
+	-mv ~/.profile backup
 
-.PHONY: reset
-reset:
+.PHONY: reset-zsh
+reset-zsh:
 	-tmux kill-server 
-	source ~/.bashrc
 	source ~/.zshrc
 
+.PHONY: reset-bash
+reset-bash:
+	-tmux kill-server 
+	source ~/.bashrc

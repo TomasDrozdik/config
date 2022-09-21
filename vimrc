@@ -3,30 +3,26 @@
 "*****************************************************************************
 "" Plugins
 "*****************************************************************************"
-call plug#begin('~/.vim/plugged')
-
-" Color scheme
-Plug 'morhetz/gruvbox'
-
-" Intelisense
-" need config
-"Plug 'neoclide/coc.nvim'
-
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"
+"" Color scheme
+"Plug 'morhetz/gruvbox'
+"
+"call plug#end()
 
 "*****************************************************************************
 "" Plugin setup
 "*****************************************************************************"
 
 "" Gruvbox
-set termguicolors
-let g:gruvbox_italic=1
-let g:gruvbox_bold=1
-let g:gruvbox_underline=1
-let g:gruvbox_undercurl=1
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
-colorscheme gruvbox
+"set termguicolors
+"let g:gruvbox_italic=1
+"let g:gruvbox_bold=1
+"let g:gruvbox_underline=1
+"let g:gruvbox_undercurl=1
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_light='hard'
+"colorscheme gruvbox
 
 
 "*****************************************************************************
@@ -79,7 +75,7 @@ set noswapfile
 set nocompatible
 
 "set backspace=[indent, eol, start];
-set backspace=indent
+"set backspace=indent
 
 "set filetype=[dos,unix] " pri zlom nastaveni vidno ^M na konci riadkov
 
@@ -153,8 +149,7 @@ set virtualedit=block "" [insert, all, onemore - movement to end of the line]
 set showmatch
 
 "" Set pairs
-set matchpairs=(:),[:],{:},<:>
-
+"set matchpairs=(:),[:],{:},<:>
 
 
 
@@ -168,7 +163,7 @@ syntax on
 set ruler
 set number
 
-" Vertical rulers 80, 120
+" Vertical rulers 80, 100
 set textwidth=80
 set colorcolumn=+1
 
@@ -247,7 +242,7 @@ set autoread
 "*****************************************************************************
 
 "" Remap <ESC>
-imap jj <Esc>
+"imap jj <Esc>
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
@@ -314,14 +309,14 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap // y/<C-R>"<CR>
 
 "" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
+"nnoremap <Leader>o :.Gbrowse<CR>
 
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
 
 " c
-autocmd FileType c setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType cc setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType c setlocal tabstop=8 shiftwidth=8 expandtab
+autocmd FileType cpp setlocal tabstop=8 shiftwidth=8 expandtab
+autocmd FileType cc setlocal tabstop=8 shiftwidth=8 expandtab
 

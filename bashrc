@@ -8,41 +8,11 @@ if [[ -z "$TMUX" ]]; then
 	tmux
 fi
 
-# ------------------------------------
-# Environment variables
-# ------------------------------------
-export VISUAL="vim"
-export EDITOR="$VISUAL"
-export GIT_EDITOR="$VISUAL"
-export LS_COLORS="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33"
-
-# Update Path
-export PATH="$PATH:~/bin"
-
 # -----------------------------------
 # Bash setup
 # -----------------------------------
 set editing-mode vi
 #set keymap vi-command
-
-# ------------------------------------
-# ALIASES
-# ------------------------------------
-# Aliases for (1) quickly opening .bashrc and (2) have terminal recognize changes to it
-alias histg="history | grep"				# Search history
-alias myip="curl http://ipecho.net/plain; echo"		# Get your current IP
-alias la="ls -lAFG --color=auto"
-alias ll="ls -lFG --color=auto"
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-alias rm="rm -i"
-alias mv="mv -i"
-alias man="man -a"
-alias docview="evince"
-
-# Example alias for quickly getting to a commonly used directory
-#alias htdocs='cd /Applications/MAMP/htdocs'
-
 
 # ------------------------------------
 # Define color variables
@@ -123,12 +93,13 @@ ps1_gt="$Red>$NONE"
 
 
 # Option 1 user@host:dir(branch)! $
-# export PS1="${ps1_user}@${ps1_host}:${ps1_dir}${ps1_git} \$ "
+export PS1="{ps1_exitval} ${ps1_user}@${ps1_host}:${ps1_dir}${ps1_git} \$ "
 
 # Option 2 dir(branch)! $
 #export PS1="${ps1_user}${BIPurple}@${ps1_host}${BIPurple}:${ps1_dir}${BIPurple} \$ ${NONE}"
 
-export PS1="\n${ps1_exitval} ${ps1_lb}${ps1_user}${ps1_at}${ps1_host}${ps1_colon} ${ps1_dir}${ps1_rb}${ps1_git}\n${ps1_gt} "
+# Option 3 retval [user@host: dir] branch >
+# export PS1="\n${ps1_exitval} ${ps1_lb}${ps1_user}${ps1_at}${ps1_host}${ps1_colon} ${ps1_dir}${ps1_rb}${ps1_git} ${ps1_gt} "
 
 
 # ------------------------------------
@@ -139,11 +110,8 @@ export PS1="\n${ps1_exitval} ${ps1_lb}${ps1_user}${ps1_at}${ps1_host}${ps1_colon
 # ------------------------------------
 if [ -f ~/.bashrc-append ]; then
    source ~/.bashrc-append
-   appended=true
 fi
 
-
-# ------------------------------------
-# MOTD (Message of the Day)
-# What you see when Terminal opens
-# ------------------------------------
+if [ -f ~/.profile ]; then
+   source ~/.profile
+fi
